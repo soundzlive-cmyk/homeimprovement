@@ -9,6 +9,7 @@ js/main.js      nav, scroll reveals, gallery lightbox, quote form
 ```
 
 ## Notes
+- **Logo** lives in `images/` (`logo.png` for light backgrounds, `logo-light.png` with white text for dark ones).
 - **Photos** are currently loaded from the existing Wix media URLs. Before cancelling Wix, download them into an `images/` folder and update the `src`/`url()` paths.
 - **Quote form** has no backend: it opens a pre-filled text message to 617-778-4403. To receive submissions by email instead, point the form at a service like Formspree.
 - Deploy by uploading the folder to any static host (GitHub Pages, Netlify, the existing server).

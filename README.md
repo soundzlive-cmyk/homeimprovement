@@ -11,6 +11,7 @@ js/main.js      nav, scroll progress/parallax, rotating headline, services previ
 ## Notes
 - **Logo** lives in `images/` (`logo.png` for light backgrounds, `logo-light.png` with white text for dark ones).
 - **Photos** are stored locally in `images/` (`service-*.jpg`, `project-*.jpg`, `about.jpg`), so the site no longer depends on Wix.
-- **Fonts**: Geist (UI/body) and Instrument Serif (italic accents) from Google Fonts.
+- **Fonts**: Archivo (wide display headings) and Inter (body) from Google Fonts.
+- **Banner video**: `images/hero-painting.mp4` (Mixkit free license, clip 2298), poster `hero-painting.jpg`.
 - **Quote form** has no backend: it opens a pre-filled text message to 617-778-4403. To receive submissions by email instead, point the form at a service like Formspree.
 - Deploy by uploading the folder to any static host (GitHub Pages, Netlify, the existing server).

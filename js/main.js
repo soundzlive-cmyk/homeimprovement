@@ -4,7 +4,7 @@
   var toggle = document.getElementById('navToggle');
   var callbar = document.querySelector('.callbar');
   var bar = document.querySelector('.progress span');
-  var heroImg = document.querySelector('.hero__media img');
+  var heroImg = document.querySelector('.hero__media video');
   var aboutImg = document.querySelector('.about__media img');
 
   // Scroll: nav state, progress bar, call bar, light parallax
@@ -73,6 +73,9 @@
   } else {
     items.forEach(function (el) { el.classList.add('is-in'); });
   }
+
+  // Pause banner video for reduced-motion users
+  if (reduce && heroImg) { heroImg.removeAttribute('autoplay'); heroImg.pause(); }
 
   // Hero rotating word
   var words = document.querySelectorAll('.rotator__word');

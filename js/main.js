@@ -34,9 +34,9 @@
 
   // Service cards pre-select the project type in the form
   var form = document.getElementById('quoteForm');
-  document.querySelectorAll('.service[data-service]').forEach(function (card) {
+  document.querySelectorAll('[data-service], [data-pick]').forEach(function (card) {
     card.addEventListener('click', function () {
-      var sel = form.elements.service, want = card.dataset.service.toLowerCase();
+      var sel = form.elements.service, want = (card.dataset.service || card.dataset.pick).toLowerCase();
       Array.prototype.forEach.call(sel.options, function (o) {
         if (o.text.toLowerCase() === want) sel.value = o.value;
       });

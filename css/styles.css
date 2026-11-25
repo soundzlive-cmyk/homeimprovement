@@ -74,10 +74,11 @@ p { margin: 0 0 1em; }
 .hero { position: relative; overflow: hidden; background: #fff; }
 .hero__photo {
   position: absolute; top: 0; right: 0; bottom: 0; width: 66%;
-  background: url("../images/hero-painter.jpg") 70% 30% / cover no-repeat;
+  background: #e9edf2 url("../images/hero-building.jpg") 60% 55% / cover no-repeat;
   -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.35) 22%, #000 55%);
           mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.35) 22%, #000 55%);
 }
+.hero__photo video { width: 100%; height: 100%; object-fit: cover; object-position: 60% 55%; display: block; }
 .hero__photo::after { content: ""; position: absolute; inset: auto 0 0 0; height: 30%; background: linear-gradient(to top, #fff, transparent); }
 .hero__inner { position: relative; padding: clamp(3.5rem, 7vw, 6rem) 0 clamp(3rem, 6vw, 5rem); }
 .hero__copy { max-width: 33rem; }

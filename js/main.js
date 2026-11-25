@@ -19,6 +19,10 @@
   });
   document.querySelectorAll('.nav__links a').forEach(function (a) { a.addEventListener('click', closeMenu); });
 
+  // Respect reduced-motion: keep the banner on its still poster
+  var heroVid = document.querySelector('.hero__photo video');
+  if (heroVid && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { heroVid.removeAttribute('autoplay'); heroVid.pause(); }
+
   // Reveal on scroll
   var items = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {

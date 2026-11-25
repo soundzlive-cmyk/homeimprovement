@@ -84,6 +84,15 @@
   });
   })();
 
+  // ?service=deck on a link from another page pre-selects the project type
+  var want = (location.search.match(/[?&]service=([^&]+)/) || [])[1];
+  if (form && want) {
+    want = decodeURIComponent(want).toLowerCase();
+    Array.prototype.forEach.call(form.elements.service.options, function (o) {
+      if (o.text.toLowerCase().indexOf(want) === 0) form.elements.service.value = o.value;
+    });
+  }
+
   // Quote form -> email via FormSubmit, with a pre-filled text as backup
   var LEAD_URL = 'https://formsubmit.co/ajax/Expresservicescl@gmail.com';
   var note = document.getElementById('formNote');

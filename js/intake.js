@@ -34,7 +34,7 @@
   panel.setAttribute('aria-label', 'Project intake assistant');
   panel.innerHTML =
     '<div class="intake__head">' +
-      '<div><strong>Project Assistant</strong><span>Express Home Improvement · usually replies same day</span></div>' +
+      '<div><strong>Project Assistant</strong><span>Express Home Improvement · usually replies the same day</span></div>' +
       '<button class="intake__x" aria-label="Close">×</button>' +
     '</div>' +
     '<div class="intake__log" aria-live="polite"></div>' +
@@ -119,9 +119,9 @@
   function summary() {
     var rows = steps.filter(function (s) { return answers[s.key]; })
       .map(function (s) { return '<li><b>' + labels[s.key] + '</b> ' + esc(answers[s.key]) + '</li>'; }).join('');
-    bot('Here\'s what I have:<ul class="intake__sum">' + rows + '</ul>Tap <b>Send request</b> and it goes straight to our team.', function () {
+    bot('Here\'s what I have:<ul class="intake__sum">' + rows + '</ul>Tap <b>Send Request</b> and it goes straight to our team.', function () {
       var wrap = el('div', 'intake__final');
-      var send = el('button', 'btn btn--primary btn--block', 'Send request');
+      var send = el('button', 'btn btn--primary btn--block', 'Send Request');
       send.type = 'button';
       var sep = /iPhone|iPad|iPod/i.test(navigator.userAgent) ? '&' : '?';
       var sms = el('a', 'btn btn--outline btn--block', 'Text it to us instead');

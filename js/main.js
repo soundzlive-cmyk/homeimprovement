@@ -8,6 +8,7 @@
     var y = window.scrollY;
     nav.classList.toggle('is-scrolled', y > 10);
     if (callbar) callbar.classList.toggle('is-visible', y > 400);
+    document.body.classList.toggle('callbar-on', y > 400);
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();

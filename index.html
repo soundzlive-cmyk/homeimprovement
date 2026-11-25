@@ -8,13 +8,13 @@
   <meta property="og:title" content="Express Home Improvement">
   <meta property="og:description" content="Family-owned home improvement serving New England. Projects big and small.">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#14161a">
+  <meta property="og:image" content="images/project-5-hero.jpg">
+  <meta name="theme-color" content="#0f1012">
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="apple-touch-icon" href="images/favicon.png">
-  <meta property="og:image" content="images/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <script type="application/ld+json">
   {
@@ -33,18 +33,19 @@
 <body>
 
 <a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"><span></span></div>
 
 <header class="nav" id="top">
   <div class="wrap nav__inner">
     <a href="#top" class="brand" aria-label="Express Home Improvement home">
-      <img src="images/logo-light.png" alt="Express Home Improvement — Craftsmanship You Can Trust" width="800" height="455">
+      <img src="images/logo-light.png" alt="Express Home Improvement" width="800" height="455">
     </a>
     <nav class="nav__links" id="navLinks" aria-label="Main">
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-      <a href="tel:16177784403" class="btn btn--sm btn--accent nav__call">
+      <a href="#services" data-spy="services">Services</a>
+      <a href="#process" data-spy="process">Process</a>
+      <a href="#projects" data-spy="projects">Projects</a>
+      <a href="#contact" data-spy="contact">Contact</a>
+      <a href="tel:16177784403" class="btn btn--sm btn--accent nav__call magnetic">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
         617-778-4403
       </a>
@@ -59,110 +60,97 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero__media" role="img" aria-label="Recently renovated home interior"></div>
+    <div class="hero__media" aria-hidden="true">
+      <img src="images/project-5-hero.jpg" alt="" fetchpriority="high">
+    </div>
     <div class="wrap hero__inner">
-      <p class="eyebrow reveal">Family-owned · Serving New England</p>
-      <h1 class="hero__title reveal">Building trust,<br><span>one home at a time.</span></h1>
-      <p class="hero__lead reveal">Quality construction, thoughtful design and lasting solutions for every project — from a leaky faucet to a full kitchen remodel.</p>
+      <p class="pill reveal"><span class="dot"></span> Family-owned · East Bridgewater, MA</p>
+      <h1 class="hero__title reveal">
+        Better
+        <span class="rotator" aria-live="polite"><span class="rotator__word is-on">kitchens</span><span class="rotator__word">bathrooms</span><span class="rotator__word">decks</span><span class="rotator__word">roofs</span><span class="rotator__word">homes</span></span><br>
+        <em>built to last.</em>
+      </h1>
+      <p class="hero__lead reveal">Quality construction, thoughtful design and honest pricing for every project, from a leaky faucet to a full kitchen remodel.</p>
       <div class="hero__cta reveal">
-        <a href="#contact" class="btn btn--accent">Get a quote</a>
-        <a href="#projects" class="btn btn--ghost">See our work</a>
+        <a href="#contact" class="btn btn--accent btn--lg magnetic">Get a free quote <span class="arrow">→</span></a>
+        <a href="#projects" class="btn btn--glass btn--lg">See our work</a>
       </div>
     </div>
-    <div class="wrap">
-      <ul class="stats reveal">
-        <li><strong>Big &amp; small</strong><span>No project too large or too minor</span></li>
-        <li><strong>Family-owned</strong><span>Based in East Bridgewater, MA</span></li>
-        <li><strong>Affordable</strong><span>Honest pricing, clear estimates</span></li>
-      </ul>
-    </div>
+    <a href="#services" class="hero__scroll" aria-label="Scroll to services"><span></span></a>
   </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Bathroom remodeling</span><i>✦</i><span>Kitchen design &amp; build</span><i>✦</i><span>Roof install &amp; repair</span><i>✦</i><span>Decks &amp; patios</span><i>✦</i><span>Plumbing &amp; electrical</span><i>✦</i><span>General repairs</span><i>✦</i>
+      <span>Bathroom remodeling</span><i>✦</i><span>Kitchen design &amp; build</span><i>✦</i><span>Roof install &amp; repair</span><i>✦</i><span>Decks &amp; patios</span><i>✦</i><span>Plumbing &amp; electrical</span><i>✦</i><span>General repairs</span><i>✦</i>
+    </div>
+  </div>
 
   <!-- SERVICES -->
   <section class="section" id="services">
     <div class="wrap">
-      <div class="section__head">
+      <div class="section__head reveal">
         <p class="eyebrow">What we do</p>
-        <h2>Services built around<br>how you live.</h2>
-        <p class="section__sub">One crew for the whole house. We handle design, build and repairs so you don't have to juggle contractors.</p>
+        <h2>One crew for <em>the whole house.</em></h2>
+        <p class="section__sub">Design, build and repairs under one roof, so you never have to juggle contractors.</p>
       </div>
 
-      <div class="services">
-        <article class="card reveal">
-          <div class="card__img" style="--img:url('https://static.wixstatic.com/media/e782ed_d272e94915654674a11141f53782fce7~mv2.jpg')"></div>
-          <div class="card__body">
-            <span class="card__num">01</span>
-            <h3>Bathroom Remodeling</h3>
-            <p>Tile, vanities, showers and tubs — modern, durable bathrooms designed for daily life.</p>
-          </div>
-        </article>
-        <article class="card reveal">
-          <div class="card__img" style="--img:url('https://static.wixstatic.com/media/e782ed_a556161de53f4884bed1af3a46a9d97a~mv2.jpg')"></div>
-          <div class="card__body">
-            <span class="card__num">02</span>
-            <h3>Kitchen Design &amp; Build</h3>
-            <p>Cabinets, counters, layouts and lighting — from first sketch to final walkthrough.</p>
-          </div>
-        </article>
-        <article class="card reveal">
-          <div class="card__img" style="--img:url('https://static.wixstatic.com/media/e782ed_b3447136440647a182b0087be6236e04~mv2.jpg')"></div>
-          <div class="card__body">
-            <span class="card__num">03</span>
-            <h3>Roof Install &amp; Repair</h3>
-            <p>New roofs, leak repairs and replacements that stand up to New England weather.</p>
-          </div>
-        </article>
-        <article class="card reveal">
-          <div class="card__img" style="--img:url('https://static.wixstatic.com/media/e782ed_7946168bcc9146f1883a959b31bcabc4~mv2.jpg')"></div>
-          <div class="card__body">
-            <span class="card__num">04</span>
-            <h3>Deck &amp; Patio</h3>
-            <p>Outdoor spaces built for cookouts, quiet mornings and everything in between.</p>
-          </div>
-        </article>
-        <article class="card reveal">
-          <div class="card__img" style="--img:url('https://static.wixstatic.com/media/e782ed_222d509a37fb42f293b743fe474604b3~mv2.jpg')"></div>
-          <div class="card__body">
-            <span class="card__num">05</span>
-            <h3>Plumbing &amp; Electrical</h3>
-            <p>Fixture swaps, upgrades and repairs handled cleanly and correctly.</p>
-          </div>
-        </article>
-        <article class="card reveal">
-          <div class="card__img" style="--img:url('https://static.wixstatic.com/media/e782ed_ca808c1ae70943a684cafcba604f9f16~mv2.jpg')"></div>
-          <div class="card__body">
-            <span class="card__num">06</span>
-            <h3>General Repairs</h3>
-            <p>Drywall, doors, trim, fixes — the to-do list you've been putting off.</p>
-          </div>
-        </article>
+      <div class="svc">
+        <ul class="svc__list" role="tablist" aria-label="Services">
+          <li><button class="svc__item is-active" role="tab" aria-selected="true" data-img="images/service-bathroom.jpg">
+            <span class="svc__num">01</span><span class="svc__name">Bathroom Remodeling</span><span class="svc__plus" aria-hidden="true"></span>
+            <span class="svc__desc">Tile, vanities, showers and tubs. Modern, durable bathrooms designed for daily life.</span>
+          </button></li>
+          <li><button class="svc__item" role="tab" aria-selected="false" data-img="images/service-kitchen.jpg">
+            <span class="svc__num">02</span><span class="svc__name">Kitchen Design &amp; Build</span><span class="svc__plus" aria-hidden="true"></span>
+            <span class="svc__desc">Cabinets, counters, layouts and lighting, from first sketch to final walkthrough.</span>
+          </button></li>
+          <li><button class="svc__item" role="tab" aria-selected="false" data-img="images/service-roof.jpg">
+            <span class="svc__num">03</span><span class="svc__name">Roof Install &amp; Repair</span><span class="svc__plus" aria-hidden="true"></span>
+            <span class="svc__desc">New roofs, leak repairs and replacements that stand up to New England weather.</span>
+          </button></li>
+          <li><button class="svc__item" role="tab" aria-selected="false" data-img="images/service-deck.jpg">
+            <span class="svc__num">04</span><span class="svc__name">Deck &amp; Patio</span><span class="svc__plus" aria-hidden="true"></span>
+            <span class="svc__desc">Outdoor spaces built for cookouts, quiet mornings and everything in between.</span>
+          </button></li>
+          <li><button class="svc__item" role="tab" aria-selected="false" data-img="images/service-plumbing.jpg">
+            <span class="svc__num">05</span><span class="svc__name">Plumbing &amp; Electrical</span><span class="svc__plus" aria-hidden="true"></span>
+            <span class="svc__desc">Fixture swaps, upgrades and repairs handled cleanly and correctly.</span>
+          </button></li>
+          <li><button class="svc__item" role="tab" aria-selected="false" data-img="images/service-repairs.jpg">
+            <span class="svc__num">06</span><span class="svc__name">General Repairs</span><span class="svc__plus" aria-hidden="true"></span>
+            <span class="svc__desc">Drywall, doors, trim and fixes: the to-do list you've been putting off.</span>
+          </button></li>
+        </ul>
+        <div class="svc__preview reveal" aria-hidden="true">
+          <img src="images/service-bathroom.jpg" alt="" class="is-on">
+          <img src="images/service-kitchen.jpg" alt="" loading="lazy">
+          <img src="images/service-roof.jpg" alt="" loading="lazy">
+          <img src="images/service-deck.jpg" alt="" loading="lazy">
+          <img src="images/service-plumbing.jpg" alt="" loading="lazy">
+          <img src="images/service-repairs.jpg" alt="" loading="lazy">
+          <a href="#contact" class="svc__cta">Quote this →</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- BANNER -->
-  <section class="banner">
-    <div class="wrap banner__inner reveal">
-      <h2>We take on all projects — <em>big &amp; small.</em></h2>
-      <a href="#contact" class="btn btn--accent">Start your project</a>
-    </div>
-  </section>
-
-  <!-- ABOUT / PROCESS -->
-  <section class="section section--alt" id="about">
+  <!-- PROCESS -->
+  <section class="section section--alt" id="process">
     <div class="wrap about">
       <div class="about__media reveal">
-        <img src="https://static.wixstatic.com/media/a4c183_f88306676db24a8698ed24441f6a2123~mv2.jpg" alt="Finished home renovation by Express Home Improvement" loading="lazy">
-        <div class="about__badge"><strong>Local</strong><span>East Bridgewater, MA</span></div>
+        <img src="images/about.jpg" alt="Express Home Improvement crew reviewing plans on site" loading="lazy">
+        <div class="about__badge"><strong>Big or small</strong><span>We take on every project</span></div>
       </div>
       <div class="about__copy">
-        <p class="eyebrow">About us</p>
-        <h2>Your home should reflect how you live.</h2>
-        <p>At Express Home Improvement, we believe your home should reflect your lifestyle, your comfort and your plans for the future. We're a family-owned team serving homeowners across New England, and we treat every job — big or small — like it's our own house.</p>
+        <p class="eyebrow reveal">How we work</p>
+        <h2 class="reveal">Your home should reflect <em>how you live.</em></h2>
+        <p class="reveal">We're a family-owned team serving homeowners across New England, and we treat every job like it's our own house.</p>
         <ol class="steps">
-          <li><span>1</span><div><h4>Talk it through</h4><p>Call or send a message. We'll listen to what you want and answer your questions.</p></div></li>
-          <li><span>2</span><div><h4>Get a clear quote</h4><p>We visit, measure and give you an honest estimate — no surprises.</p></div></li>
-          <li><span>3</span><div><h4>We build it right</h4><p>Clean job sites, steady communication, and work we're proud to put our name on.</p></div></li>
+          <li class="reveal"><span>01</span><div><h3>Talk it through</h3><p>Call or send a message. We'll listen to what you want and answer your questions.</p></div></li>
+          <li class="reveal"><span>02</span><div><h3>Get a clear quote</h3><p>We visit, measure and give you an honest estimate. No surprises.</p></div></li>
+          <li class="reveal"><span>03</span><div><h3>We build it right</h3><p>Clean job sites, steady communication, and work we're proud to put our name on.</p></div></li>
         </ol>
       </div>
     </div>
@@ -171,33 +159,45 @@
   <!-- PROJECTS -->
   <section class="section" id="projects">
     <div class="wrap">
-      <div class="section__head section__head--row">
+      <div class="section__head section__head--row reveal">
         <div>
           <p class="eyebrow">Recent work</p>
-          <h2>Projects we're proud of.</h2>
+          <h2>Projects we're <em>proud of.</em></h2>
         </div>
-        <p class="section__sub">Tap any photo to view it larger.</p>
+        <div class="gal-ctrl">
+          <button class="round" data-dir="-1" aria-label="Previous projects">←</button>
+          <button class="round" data-dir="1" aria-label="Next projects">→</button>
+        </div>
       </div>
-      <div class="gallery">
-        <button class="gallery__item g-wide"><img src="https://static.wixstatic.com/media/e782ed_2e349ff96da64c1aac83cf87eb432053~mv2.jpg" alt="Recent remodeling project" loading="lazy"></button>
-        <button class="gallery__item g-tall"><img src="https://static.wixstatic.com/media/e782ed_335a105e863343678c389fbb08d9257f~mv2.jpg" alt="Recent remodeling project" loading="lazy"></button>
-        <button class="gallery__item g-tall"><img src="https://static.wixstatic.com/media/e782ed_d5240cf04caa44b484a95e344472f074~mv2.jpg" alt="Recent remodeling project" loading="lazy"></button>
-        <button class="gallery__item g-tall"><img src="https://static.wixstatic.com/media/e782ed_9f072ff003204b34999ba76e33950198~mv2.jpg" alt="Recent remodeling project" loading="lazy"></button>
-        <button class="gallery__item g-wide"><img src="https://static.wixstatic.com/media/e782ed_d0b661a5954b4f218a095d081d3f9e54~mv2.jpg" alt="Recent remodeling project" loading="lazy"></button>
-        <button class="gallery__item"><img src="https://static.wixstatic.com/media/e782ed_af6dd640659940f996fc3ab9b42398d1~mv2.jpg" alt="Recent remodeling project" loading="lazy"></button>
-        <button class="gallery__item"><img src="https://static.wixstatic.com/media/e782ed_1f21f6bc6a324299a0469f9dedbfc4d0~mv2.jpg" alt="Recent remodeling project" loading="lazy"></button>
-        <button class="gallery__item"><img src="https://static.wixstatic.com/media/e782ed_0c308c48ecbc4f7298cadab85ce1e4f5~mv2.jpg" alt="Recent remodeling project" loading="lazy"></button>
-      </div>
+    </div>
+    <div class="gallery" id="gallery" tabindex="0" aria-label="Project photos, scroll sideways">
+      <button class="gallery__item g-wide"><img src="images/project-1.jpg" alt="Bathroom double vanity remodel" loading="lazy"></button>
+      <button class="gallery__item"><img src="images/project-2.jpg" alt="Glass shower installation" loading="lazy"></button>
+      <button class="gallery__item"><img src="images/project-3.jpg" alt="Deck and paver patio" loading="lazy"></button>
+      <button class="gallery__item"><img src="images/project-4.jpg" alt="Recent remodeling project" loading="lazy"></button>
+      <button class="gallery__item g-wide"><img src="images/project-5-hero.jpg" alt="New deck around above-ground pool" loading="lazy"></button>
+      <button class="gallery__item"><img src="images/project-6.jpg" alt="Recent remodeling project" loading="lazy"></button>
+      <button class="gallery__item"><img src="images/project-7.jpg" alt="Recent remodeling project" loading="lazy"></button>
+      <button class="gallery__item"><img src="images/project-8.jpg" alt="Recent remodeling project" loading="lazy"></button>
+    </div>
+    <div class="wrap"><p class="hint">Drag or swipe to browse · tap a photo to enlarge</p></div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="band">
+    <div class="wrap band__inner reveal">
+      <h2>No job too big. <em>No job too small.</em></h2>
+      <a href="#contact" class="btn btn--dark btn--lg magnetic">Start your project <span class="arrow">→</span></a>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section class="section section--dark" id="contact">
     <div class="wrap contact">
-      <div class="contact__info">
+      <div class="contact__info reveal">
         <p class="eyebrow">Get a quote</p>
-        <h2>Let's talk about your next project.</h2>
-        <p>Tell us a little about what you have in mind and we'll get back to you quickly. Prefer to talk? Just call.</p>
+        <h2>Let's talk about your <em>next project.</em></h2>
+        <p>Answer a couple of quick questions and we'll get back to you fast. Prefer to talk? Just call.</p>
         <a class="contact__phone" href="tel:16177784403">617-778-4403</a>
         <dl class="contact__meta">
           <div><dt>Head office</dt><dd>East Bridgewater, MA</dd></div>
@@ -205,25 +205,36 @@
         </dl>
       </div>
 
-      <form class="form" id="quoteForm" novalidate>
-        <div class="form__row">
-          <label>Name<input name="name" type="text" autocomplete="name" required></label>
-          <label>Phone<input name="phone" type="tel" autocomplete="tel" required></label>
-        </div>
-        <label>Town<input name="town" type="text" autocomplete="address-level2"></label>
-        <label>Project type
-          <select name="service">
-            <option>Bathroom remodel</option>
-            <option>Kitchen design &amp; build</option>
-            <option>Roof install / repair</option>
-            <option>Deck &amp; patio</option>
-            <option>Plumbing / electrical</option>
-            <option>General repairs</option>
-            <option>Something else</option>
-          </select>
-        </label>
-        <label>Tell us about it<textarea name="details" rows="4" placeholder="Size, timeline, anything we should know"></textarea></label>
-        <button type="submit" class="btn btn--accent btn--block">Send request</button>
+      <form class="form reveal" id="quoteForm" novalidate>
+        <div class="form__steps" aria-hidden="true"><span class="is-on"></span><span></span></div>
+
+        <fieldset class="form__step is-on" data-step="1">
+          <legend>What can we help with?</legend>
+          <div class="chips">
+            <label><input type="radio" name="service" value="Bathroom remodel" checked><span>Bathroom</span></label>
+            <label><input type="radio" name="service" value="Kitchen design & build"><span>Kitchen</span></label>
+            <label><input type="radio" name="service" value="Roof install / repair"><span>Roofing</span></label>
+            <label><input type="radio" name="service" value="Deck & patio"><span>Deck &amp; patio</span></label>
+            <label><input type="radio" name="service" value="Plumbing / electrical"><span>Plumbing / electrical</span></label>
+            <label><input type="radio" name="service" value="General repairs"><span>Repairs</span></label>
+            <label><input type="radio" name="service" value="Something else"><span>Something else</span></label>
+          </div>
+          <label class="field">Tell us about it <span class="opt">optional</span><textarea name="details" rows="3" placeholder="Size, timeline, anything we should know"></textarea></label>
+          <button type="button" class="btn btn--accent btn--block" data-next>Continue <span class="arrow">→</span></button>
+        </fieldset>
+
+        <fieldset class="form__step" data-step="2">
+          <legend>How do we reach you?</legend>
+          <div class="form__row">
+            <label class="field">Name<input name="name" type="text" autocomplete="name" required></label>
+            <label class="field">Phone<input name="phone" type="tel" autocomplete="tel" required></label>
+          </div>
+          <label class="field">Town <span class="opt">optional</span><input name="town" type="text" autocomplete="address-level2"></label>
+          <div class="form__actions">
+            <button type="button" class="btn btn--glass" data-back>← Back</button>
+            <button type="submit" class="btn btn--accent">Send request</button>
+          </div>
+        </fieldset>
         <p class="form__note" id="formNote">Sends a text to 617-778-4403 from your phone.</p>
       </form>
     </div>
@@ -238,7 +249,7 @@
     </a>
     <nav aria-label="Footer">
       <a href="#services">Services</a>
-      <a href="#about">About</a>
+      <a href="#process">Process</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -253,9 +264,12 @@
 </div>
 
 <!-- Lightbox -->
-<div class="lightbox" id="lightbox" hidden>
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Project photo">
   <button class="lightbox__close" aria-label="Close">×</button>
+  <button class="lightbox__nav lightbox__prev" aria-label="Previous photo">←</button>
   <img alt="">
+  <button class="lightbox__nav lightbox__next" aria-label="Next photo">→</button>
+  <p class="lightbox__count"></p>
 </div>
 
 <script src="js/main.js"></script>

@@ -129,6 +129,15 @@ p { margin: 0 0 1em; }
 .service--text .service__link { color: var(--gold); border-color: rgba(255,255,255,.15); }
 .service__icon { font-size: 2.2rem; line-height: 1; margin-bottom: 1rem; }
 .bath__cta { margin-top: 2rem; text-align: center; }
+.ba { margin-top: 3rem; }
+.ba__title { margin-bottom: 1rem; }
+.ba__pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.ba__steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1rem; }
+.ba__item { margin: 0; position: relative; border-radius: var(--radius); overflow: hidden; }
+.ba__item .gallery__item { display: block; width: 100%; border-radius: 0; aspect-ratio: 4 / 3; }
+.ba__pair .gallery__item { aspect-ratio: 4 / 5; }
+.ba__item figcaption { position: absolute; left: .8rem; top: .8rem; pointer-events: none; }
+.ba__item .tag { margin: 0; box-shadow: 0 2px 8px rgba(0,0,0,.2); }
 .bath-feature { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
 .bath-feature__img { margin: 0; border-radius: var(--radius); overflow: hidden; }
 .bath-feature__img .gallery__item { display: block; width: 100%; aspect-ratio: 4 / 5; border-radius: 0; }
@@ -268,6 +277,10 @@ p { margin: 0 0 1em; }
   .services { grid-template-columns: 1fr; }
       .decks { grid-template-rows: 260px 200px 200px; }
   .gallery.gallery--two { grid-auto-rows: 220px; }
+  .ba__steps { grid-template-columns: 1fr 1fr 1fr; gap: .5rem; }
+  .ba__pair { gap: .5rem; }
+  .ba__steps .tag { font-size: .6rem; padding: .2rem .4rem; }
+  .ba__item figcaption { left: .4rem; top: .4rem; }
     .form__row { grid-template-columns: 1fr; }
   .footer__inner { grid-template-columns: 1fr; }
   .gallery { grid-auto-rows: 150px; }

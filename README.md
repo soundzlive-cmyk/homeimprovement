@@ -10,6 +10,7 @@ js/main.js      mobile menu, scroll reveals, gallery lightbox, quote form
 
 ## Notes
 - **Logo** lives in `images/` (`logo.png` for light backgrounds, `logo-light.png` with white text for dark ones).
+- **Sections**: hero, services, Bathroom Remodels (`#bathrooms`), Decks & Patios (`#decks`), about, more projects, contact.
 - **Photos** are stored locally in `images/` (`service-*.jpg`, `project-*.jpg`, `about.jpg`), so the site no longer depends on Wix.
 - **Font**: Arial throughout (no web fonts to load).
 - **Banner photo**: `images/hero-painter.jpg`, a still from Pexels video 6474363 (free license), mirrored and faded into the page with a CSS mask.

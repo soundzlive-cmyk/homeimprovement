@@ -84,8 +84,13 @@
   });
   })();
 
-  // Quote form -> pre-filled text message (no backend needed yet)
+  // Quote form -> email via FormSubmit, with a pre-filled text as backup
+  var LEAD_URL = 'https://formsubmit.co/ajax/Expresservicescl@gmail.com';
   var note = document.getElementById('formNote');
+  function smsHref(msg) {
+    var sep = /iPhone|iPad|iPod/i.test(navigator.userAgent) ? '&' : '?';
+    return 'sms:+16177784403' + sep + 'body=' + encodeURIComponent(msg);
+  }
   if (form) form.addEventListener('submit', function (e) {
     e.preventDefault();
     var ok = true;
@@ -102,9 +107,26 @@
       '\nPhone: ' + d.phone.value +
       (d.town.value ? '\nTown: ' + d.town.value : '') +
       (d.details.value ? '\nDetails: ' + d.details.value : '');
-    var sep = /iPhone|iPad|iPod/i.test(navigator.userAgent) ? '&' : '?';
-    window.location.href = 'sms:+16177784403' + sep + 'body=' + encodeURIComponent(msg);
-    note.textContent = 'Opening your messages app… If nothing happens, call 617-778-4403.';
+    var btn = form.querySelector('button[type=submit]');
+    btn.disabled = true; note.textContent = 'Sending...';
+    fetch(LEAD_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        _subject: 'New estimate request: ' + d.service.value + ' (' + d.name.value + ')',
+        _template: 'table', _captcha: 'false',
+        'Project type': d.service.value, Name: d.name.value, Phone: d.phone.value,
+        Town: d.town.value, Details: d.details.value, Source: 'Website estimate form'
+      })
+    }).then(function (r) { return r.json().then(function (j) { if (!r.ok || String(j.success) !== 'true') throw 0; }); })
+      .then(function () {
+        form.reset();
+        note.textContent = 'Thanks! Your request was sent. We\'ll be in touch soon.';
+      })
+      .catch(function () {
+        note.innerHTML = 'We couldn\'t send that online. <a href="' + smsHref(msg) + '">Text it to us</a> or call 617-778-4403.';
+      })
+      .then(function () { btn.disabled = false; });
   });
 
   var yr = document.getElementById('year');

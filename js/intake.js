@@ -3,6 +3,7 @@
 (function () {
   var PHONE = '16177784403';
   var PHONE_PRETTY = '617-778-4403';
+  var LEAD_URL = 'https://formsubmit.co/ajax/Expresservicescl@gmail.com';
 
   var steps = [
     { key: 'service', ask: "Hi! I'm the Express Home Improvement assistant. What kind of project can we help with?",
@@ -118,20 +119,34 @@
   function summary() {
     var rows = steps.filter(function (s) { return answers[s.key]; })
       .map(function (s) { return '<li><b>' + labels[s.key] + '</b> ' + esc(answers[s.key]) + '</li>'; }).join('');
-    bot('Here\'s what I have:<ul class="intake__sum">' + rows + '</ul>Tap <b>Send request</b> and it goes straight to our team. Have photos? Attach them to the text before you send.', function () {
+    bot('Here\'s what I have:<ul class="intake__sum">' + rows + '</ul>Tap <b>Send request</b> and it goes straight to our team.', function () {
       var wrap = el('div', 'intake__final');
-      var send = el('a', 'btn btn--primary btn--block', 'Send request');
+      var send = el('button', 'btn btn--primary btn--block', 'Send request');
+      send.type = 'button';
       var sep = /iPhone|iPad|iPod/i.test(navigator.userAgent) ? '&' : '?';
-      send.href = 'sms:+' + PHONE + sep + 'body=' + encodeURIComponent(message());
-      send.addEventListener('click', function () {
-        setTimeout(function () { bot('Thanks, ' + esc(answers.name.split(' ')[0]) + '! If your messages app didn\'t open, just call us at <a href="tel:' + PHONE + '">' + PHONE_PRETTY + '</a>.'); }, 400);
-      });
-      var call = el('a', 'btn btn--outline btn--block', 'Call ' + PHONE_PRETTY);
-      call.href = 'tel:' + PHONE;
+      var sms = el('a', 'btn btn--outline btn--block', 'Text it to us instead');
+      sms.href = 'sms:+' + PHONE + sep + 'body=' + encodeURIComponent(message());
       var restart = el('button', 'intake__skip', 'Start over');
       restart.type = 'button';
       restart.addEventListener('click', reset);
-      wrap.appendChild(send); wrap.appendChild(call); wrap.appendChild(restart);
+      send.addEventListener('click', function () {
+        send.disabled = true; send.textContent = 'Sending...';
+        var data = { _subject: 'New project request: ' + answers.service + ' (' + answers.name + ')', _template: 'table', _captcha: 'false', Source: 'Website project assistant' };
+        steps.forEach(function (s) { if (answers[s.key]) data[labels[s.key]] = answers[s.key]; });
+        if (answers.email) data._replyto = answers.email;
+        fetch(LEAD_URL, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(data) })
+          .then(function (r) { return r.json().then(function (j) { if (!r.ok || String(j.success) !== 'true') throw 0; }); })
+          .then(function () {
+            ctrl.innerHTML = '';
+            var done = el('div', 'intake__final'); done.appendChild(restart); ctrl.appendChild(done);
+            bot('Thanks, ' + esc(answers.name.split(' ')[0]) + '! Your request is in. We usually reply the same day. Have photos? Text them to <a href="tel:' + PHONE + '">' + PHONE_PRETTY + '</a>.');
+          })
+          .catch(function () {
+            send.disabled = false; send.textContent = 'Try again';
+            bot('Sorry, that didn\'t go through. Tap <b>Text it to us instead</b>, or call <a href="tel:' + PHONE + '">' + PHONE_PRETTY + '</a>.');
+          });
+      });
+      wrap.appendChild(send); wrap.appendChild(sms); wrap.appendChild(restart);
       ctrl.appendChild(wrap);
     });
   }

@@ -136,6 +136,7 @@ p { margin: 0 0 1em; }
 .ba__item { margin: 0; position: relative; border-radius: var(--radius); overflow: hidden; }
 .ba__item .gallery__item { display: block; width: 100%; border-radius: 0; aspect-ratio: 4 / 3; }
 .ba__pair .gallery__item { aspect-ratio: 4 / 5; }
+.ba__pair--wide .gallery__item { aspect-ratio: 16 / 9; }
 .ba__item figcaption { position: absolute; left: .8rem; top: .8rem; pointer-events: none; }
 .ba__item .tag { margin: 0; box-shadow: 0 2px 8px rgba(0,0,0,.2); }
 .bath-feature { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
@@ -279,6 +280,7 @@ p { margin: 0 0 1em; }
   .gallery.gallery--two { grid-auto-rows: 220px; }
   .ba__steps { grid-template-columns: 1fr 1fr 1fr; gap: .5rem; }
   .ba__pair { gap: .5rem; }
+  .ba__pair--wide { grid-template-columns: 1fr; }
   .ba__steps .tag { font-size: .6rem; padding: .2rem .4rem; }
   .ba__item figcaption { left: .4rem; top: .4rem; }
     .form__row { grid-template-columns: 1fr; }

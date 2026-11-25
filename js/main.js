@@ -38,7 +38,7 @@
 
   // Service cards pre-select the project type in the form
   var form = document.getElementById('quoteForm');
-  document.querySelectorAll('[data-service], [data-pick]').forEach(function (card) {
+  if (form) document.querySelectorAll('[data-service], [data-pick]').forEach(function (card) {
     card.addEventListener('click', function () {
       var sel = form.elements.service, want = (card.dataset.service || card.dataset.pick).toLowerCase();
       Array.prototype.forEach.call(sel.options, function (o) {
@@ -49,6 +49,7 @@
 
   // Lightbox with prev/next, keyboard and swipe
   var lb = document.getElementById('lightbox');
+  if (lb) (function () {
   var lbImg = lb.querySelector('img');
   var shots = Array.prototype.slice.call(document.querySelectorAll('.gallery__item img'));
   var cur = 0, lastFocus = null;
@@ -81,10 +82,11 @@
     if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1));
     tx = null;
   });
+  })();
 
   // Quote form -> pre-filled text message (no backend needed yet)
   var note = document.getElementById('formNote');
-  form.addEventListener('submit', function (e) {
+  if (form) form.addEventListener('submit', function (e) {
     e.preventDefault();
     var ok = true;
     ['name', 'phone'].forEach(function (n) {

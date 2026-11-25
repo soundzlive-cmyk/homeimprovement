@@ -88,6 +88,12 @@ p { margin: 0 0 1em; }
 .checks { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem 1.4rem; font-size: .95rem; font-weight: 700; color: var(--navy); }
 .checks li::before { content: "✓"; color: var(--gold-dk); margin-right: .4rem; }
 
+/* About page header */
+.page-head { background: var(--tint); padding: clamp(3rem, 7vw, 5rem) 0 clamp(2rem, 5vw, 3.5rem); border-bottom: 4px solid var(--gold); }
+.page-head h1 { margin-bottom: .3em; }
+.page-head .hero__lead { margin: 0; }
+.nav__links a[aria-current="page"]::after { transform: scaleX(1); }
+
 /* Sections */
 .section { padding: clamp(4rem, 8vw, 6.5rem) 0; }
 .section--tint { background: var(--tint); }

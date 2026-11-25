@@ -3,7 +3,8 @@
 Modern, mobile-first redesign of https://www.xphomeimprovement.com. Plain HTML/CSS/JS — no build step.
 
 ```
-index.html      single-page site (hero, services, about/process, projects, contact)
+index.html      homepage (hero, services, bathrooms, decks, projects, contact)
+about.html      About page (family-owned story + 3-step process)
 css/styles.css  styles
 js/main.js      mobile menu, scroll reveals, gallery lightbox, quote form
 ```

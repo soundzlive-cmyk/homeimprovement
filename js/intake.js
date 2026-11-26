@@ -26,7 +26,7 @@
   var answers = {}, idx = 0, started = false;
 
   // ---- DOM ----
-  var launcher = el('button', 'intake-launch', '<span class="intake-launch__dot"></span>Start your project');
+  var launcher = el('button', 'intake-launch', '<span class="intake-launch__dot"></span>Start a project');
   launcher.setAttribute('aria-haspopup', 'dialog');
   var panel = el('div', 'intake');
   panel.hidden = true;

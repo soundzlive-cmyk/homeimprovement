@@ -415,10 +415,18 @@ p { margin: 0 0 1em; }
 
 /* ---- Videos page ---- */
 .vids { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-.vid { margin: 0; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
-.vid video { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: var(--navy); }
+.vid { margin: 0; display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.vid__frame { position: relative; aspect-ratio: 4 / 5; background: var(--navy); }
+.vid video { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; background: var(--navy); }
+/* Once playing, show the whole frame (no cropping) */
+.vid.is-playing video { object-fit: contain; }
 .vid figcaption { padding: 1rem 1.1rem 1.2rem; }
 .vid h3 { margin-bottom: .3rem; }
 .vid p { margin: 0; color: var(--muted); font-size: .95rem; }
 @media (max-width: 980px) { .vids { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 560px) { .vids { grid-template-columns: 1fr; } }
+@media (max-width: 640px) {
+  .vids { grid-template-columns: 1fr; gap: 1.25rem; }
+  /* Phones: each clip at its own shape, full width, never taller than the screen */
+  .vid__frame { aspect-ratio: auto; }
+  .vid video { position: static; height: auto; max-height: 75vh; object-fit: contain; }
+}

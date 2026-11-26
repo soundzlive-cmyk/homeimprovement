@@ -171,6 +171,16 @@
     mark(); restart();
   })();
 
+  // Videos: show the full frame while playing; pause others when one starts
+  var vids = document.querySelectorAll('.vid video');
+  Array.prototype.forEach.call(vids, function (v) {
+    var card = v.closest('.vid');
+    v.addEventListener('play', function () {
+      card.classList.add('is-playing');
+      Array.prototype.forEach.call(vids, function (o) { if (o !== v && !o.paused) o.pause(); });
+    });
+  });
+
   var yr = document.getElementById('year');
   if (yr) yr.textContent = new Date().getFullYear();
 })();

@@ -5,6 +5,7 @@ Modern, mobile-first redesign of https://www.xphomeimprovement.com. Plain HTML/C
 ```
 index.html      homepage (hero, services, bathrooms, contact)
 bathrooms.html  all bathroom remodel photos
+videos.html     job site videos (images/video-*.mp4, posters .jpg)
 about.html      About page (family-owned story + 3-step process)
 decks.html      Decks & Patios page (project photos + before/after)
 css/styles.css  styles

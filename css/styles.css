@@ -412,4 +412,13 @@ p { margin: 0 0 1em; }
   .promo__overlay p:not(.kicker) { font-size: .98rem; }
   .promo__btns .btn { flex: 1 1 100%; }
 }
-}
+
+/* ---- Videos page ---- */
+.vids { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.vid { margin: 0; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.vid video { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: var(--navy); }
+.vid figcaption { padding: 1rem 1.1rem 1.2rem; }
+.vid h3 { margin-bottom: .3rem; }
+.vid p { margin: 0; color: var(--muted); font-size: .95rem; }
+@media (max-width: 980px) { .vids { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .vids { grid-template-columns: 1fr; } }

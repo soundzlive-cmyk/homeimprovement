@@ -151,6 +151,11 @@ p { margin: 0 0 1em; }
 .ba__pair .gallery__item { aspect-ratio: 4 / 5; }
 .ba__pair--wide .gallery__item { aspect-ratio: 16 / 9; }
 .ba__pair--one { grid-template-columns: 1fr; }
+.ba__steps--tall .gallery__item { aspect-ratio: 3 / 4; }
+.bath-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
+.bath-grid .gallery__item { aspect-ratio: 3 / 4; }
+@media (max-width: 980px) { .bath-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 560px) { .bath-grid { grid-template-columns: 1fr 1fr; gap: .5rem; } .ba__steps--tall { grid-template-columns: 1fr 1fr; } .ba__steps--tall .ba__item:first-child { grid-column: 1 / -1; } .ba__steps--tall .ba__item:first-child .gallery__item { aspect-ratio: 4 / 3; } }
 .ba__pair--tall { margin-top: 1rem; }
 .ba__pair--tall .gallery__item { aspect-ratio: 3 / 4; }
 .ba__pair--tall img { object-position: center 25%; }

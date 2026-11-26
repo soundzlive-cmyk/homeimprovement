@@ -147,6 +147,30 @@
       .then(function () { btn.disabled = false; });
   });
 
+  // Free estimate promo: swipeable photos that rotate every 5 seconds
+  var promo = document.querySelector('.promo');
+  if (promo) (function () {
+    var track = promo.querySelector('.promo__track');
+    var slides = track.children, dotsBox = promo.querySelector('.promo__dots');
+    var dots = [], cur = 0, timer = null;
+    var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function go(i) { cur = (i + slides.length) % slides.length; track.scrollTo({ left: cur * track.clientWidth, behavior: 'smooth' }); mark(); }
+    function mark() { dots.forEach(function (d, k) { d.setAttribute('aria-selected', k === cur ? 'true' : 'false'); }); }
+    Array.prototype.forEach.call(slides, function (s, k) {
+      var d = document.createElement('button'); d.type = 'button'; d.setAttribute('role', 'tab'); d.setAttribute('aria-label', 'Photo ' + (k + 1));
+      d.addEventListener('click', function () { go(k); restart(); });
+      dotsBox.appendChild(d); dots.push(d);
+    });
+    track.addEventListener('scroll', function () { var k = Math.round(track.scrollLeft / track.clientWidth); if (k !== cur) { cur = k; mark(); } }, { passive: true });
+    function restart() { if (still) return; clearInterval(timer); timer = setInterval(function () { go(cur + 1); }, 5000); }
+    promo.addEventListener('mouseenter', function () { clearInterval(timer); });
+    promo.addEventListener('mouseleave', restart);
+    promo.addEventListener('focusin', function () { clearInterval(timer); });
+    track.addEventListener('touchstart', function () { clearInterval(timer); }, { passive: true });
+    track.addEventListener('touchend', restart, { passive: true });
+    mark(); restart();
+  })();
+
   var yr = document.getElementById('year');
   if (yr) yr.textContent = new Date().getFullYear();
 })();

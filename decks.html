@@ -34,10 +34,15 @@
     </a>
     <nav class="nav__links" id="navLinks" aria-label="Main">
       <a href="index.html">Home</a>
-      <a href="index.html#services">Services</a>
-      <a href="index.html#bathrooms">Bathrooms</a>
-      <a href="decks.html" aria-current="page">Decks</a>
-      <a href="home-improvements.html">Home Improvements</a>
+      <div class="nav__drop is-current">
+        <a href="index.html#services" class="nav__drop-link">Services</a>
+        <button type="button" class="nav__drop-btn" aria-expanded="false" aria-controls="svcMenu" aria-label="Show service pages"></button>
+        <div class="nav__sub" id="svcMenu">
+          <a href="index.html#bathrooms">Bathrooms</a>
+          <a href="decks.html" aria-current="page">Decks</a>
+          <a href="home-improvements.html">Home Improvements</a>
+        </div>
+      </div>
       <a href="about.html">About</a>
       <a href="index.html#contact">Contact</a>
       <a href="index.html#contact" class="btn btn--primary btn--sm">Free Estimate</a>

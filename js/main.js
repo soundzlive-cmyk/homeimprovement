@@ -20,6 +20,14 @@
   });
   document.querySelectorAll('.nav__links a').forEach(function (a) { a.addEventListener('click', closeMenu); });
 
+  // Services dropdown: the arrow button toggles it (tap on phones, Enter/Space on keyboard)
+  document.querySelectorAll('.nav__drop').forEach(function (d) {
+    var btn = d.querySelector('.nav__drop-btn');
+    btn.addEventListener('click', function () { btn.setAttribute('aria-expanded', d.classList.toggle('is-open')); });
+    d.addEventListener('keydown', function (e) { if (e.key === 'Escape' && d.classList.contains('is-open')) { d.classList.remove('is-open'); btn.setAttribute('aria-expanded', 'false'); btn.focus(); } });
+    document.addEventListener('click', function (e) { if (!d.contains(e.target)) { d.classList.remove('is-open'); btn.setAttribute('aria-expanded', 'false'); } });
+  });
+
   // Respect reduced-motion: keep the banner on its still poster
   var heroVid = document.querySelector('.hero__photo video');
   if (heroVid && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { heroVid.removeAttribute('autoplay'); heroVid.pause(); }

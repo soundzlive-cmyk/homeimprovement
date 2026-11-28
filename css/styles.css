@@ -600,3 +600,33 @@ p { margin: 0 0 1em; }
   .page-mag .gallery__item { border-width: 6px; border-bottom-width: 22px; }
 }
 @media (prefers-reduced-motion: reduce) { .page-mag .mag__fig { transition: none; } }
+
+/* ---- Magazine layout variants used on Bathrooms and Decks ---- */
+.mag__ba--three { grid-template-columns: repeat(3, 1fr); max-width: 900px; }
+.mag__ba--three .gallery__item { aspect-ratio: 3 / 4; }
+.mag__ba--steps { margin-top: 1.25rem; }
+.mag__ba--wide .gallery__item { aspect-ratio: 16 / 9; }
+.mag__ba--wide .mag__fig:first-child { grid-column: 1 / -1; }
+.mag-grid--set { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
+.mag-grid--set .mag__fig { width: calc((100% - 3rem) / 3); }
+.mag-grid--set .gallery__item { aspect-ratio: 3 / 4; }
+.mag__fig--solo .gallery__item { aspect-ratio: 16 / 9; }
+.page-mag .mag-grid--set, .page-mag .mag__fig--solo {
+  background: #d6d7d9; padding: 1.4rem; border-radius: 4px;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.06), inset 0 0 30px rgba(0,0,0,.08);
+}
+.page-mag .mag-grid--set .mag__fig:nth-child(odd) { transform: rotate(-1.2deg); }
+.page-mag .mag-grid--set .mag__fig:nth-child(even), .page-mag .mag__fig--solo .mag__fig { transform: rotate(1deg); }
+.page-mag .mag__fig--solo .mag__fig:hover, .page-mag .mag-grid--set .mag__fig:hover { transform: rotate(0) scale(1.02); }
+@media (min-width: 821px) {
+  .page-mag .mag__ba--three { max-width: 800px; }
+  .page-mag .mag__ba--wide { max-width: 760px; }
+  .page-mag .mag-grid--set { width: 70%; margin-inline: auto; }
+}
+@media (max-width: 820px) { .mag-grid--set { gap: .75rem; } .mag-grid--set .mag__fig { width: calc((100% - .75rem) / 2); } }
+@media (max-width: 560px) {
+  .mag__ba--three { grid-template-columns: 1fr 1fr; }
+  .mag__ba--three .mag__fig:first-child { grid-column: 1 / -1; }
+  .mag__ba--three .mag__fig:first-child .gallery__item { aspect-ratio: 4 / 3; }
+  .page-mag .mag-grid--set, .page-mag .mag__fig--solo { padding: .8rem; }
+}

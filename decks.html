@@ -14,9 +14,12 @@
   <meta name="theme-color" content="#13233a">
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="apple-touch-icon" href="images/favicon.png">
-  <link rel="stylesheet" href="css/styles.css?v=20261128j">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap">
+  <link rel="stylesheet" href="css/styles.css?v=20261128k">
 </head>
-<body>
+<body class="page-mag">
 
 <a class="skip" href="#main">Skip to content</a>
 
@@ -63,80 +66,92 @@
 
 <main id="main">
 
-  <section class="page-head">
-    <div class="wrap">
-      <p class="kicker">Decks &amp; patios</p>
-      <h1>Outdoor spaces built to enjoy.</h1>
-      <p class="hero__lead">Pressure-treated and composite decks, pool decks, railings, stairs and paver patios, framed and finished by our own crew.</p>
+  <!-- MAGAZINE COVER -->
+  <section class="mag-cover">
+    <img src="images/deck-ba-after.jpg" alt="Finished multi-level wood deck with stairs and railings" class="mag-cover__img">
+    <div class="wrap mag-cover__text">
+      <p class="mag-kicker">Express Home Improvement &middot; The Outdoor Issue</p>
+      <h1>Decks &amp; Patios</h1>
+      <p class="mag-dek">Decks, pool decks, railings and paver patios, framed and finished by our own crew.</p>
     </div>
   </section>
 
-  <!-- DECKS -->
-  <section class="section" id="decks">
-    <div class="wrap">
-      <div class="decks">
-        <figure class="deck__item d-tall reveal">
-          <button class="gallery__item"><img src="images/project-3.jpg" alt="Two-level deck with stairs beside a paver patio and pool" loading="lazy"></button>
-          <figcaption><span class="tag tag--done">Finished</span><span class="cap">Deck, stairs and paver patio</span></figcaption>
-        </figure>
-        <figure class="deck__item d-tall reveal">
-          <button class="gallery__item"><img src="images/service-deck.jpg" alt="Paver patio with gazebo and outdoor seating" loading="lazy"></button>
-          <figcaption><span class="tag tag--done">Finished</span><span class="cap">Paver patio and outdoor living area</span></figcaption>
-        </figure>
-        <figure class="deck__item d-wide reveal">
-          <button class="gallery__item"><img src="images/project-5-hero.jpg" alt="Wraparound deck around an above-ground pool, in progress" loading="lazy"></button>
-          <figcaption><span class="tag">In progress</span><span class="cap">Pool deck with railings</span></figcaption>
-        </figure>
-        <figure class="deck__item d-wide reveal">
-          <button class="gallery__item"><img src="images/service-repairs.jpg" alt="New deck framing behind a house" loading="lazy"></button>
-          <figcaption><span class="tag">In progress</span><span class="cap">New deck framing</span></figcaption>
-        </figure>
+  <!-- INTRO + CONTENTS -->
+  <section class="mag-intro">
+    <div class="wrap mag-intro__grid">
+      <div class="mag-intro__text">
+        <p class="mag-lede">Summer is better outside. We build decks and patios that are solid underfoot, safe around the pool and good-looking for years, starting with framing done right.</p>
+        <p>Below are a few recent outdoor projects, from a paver patio with a gazebo to a multi-level deck built on a bare dirt yard and a raised deck extension at the pool. Every one was handled start to finish by our own crew.</p>
       </div>
-      <div class="ba">
-        <h3 class="ba__title">Before &amp; after: multi-level deck</h3>
-        <div class="ba__pair">
-          <figure class="ba__item reveal">
-            <button class="gallery__item"><img src="images/deck-ba-before.jpg" alt="Before: bare dirt yard with a concrete block wall" loading="lazy"></button>
-            <figcaption><span class="tag">Before</span></figcaption>
-          </figure>
-          <figure class="ba__item reveal">
-            <button class="gallery__item"><img src="images/deck-ba-after.jpg" alt="After: finished multi-level wood deck with stairs and railings" loading="lazy"></button>
-            <figcaption><span class="tag tag--done">After</span></figcaption>
-          </figure>
-        </div>
-        <div class="ba__steps">
-          <figure class="ba__item reveal">
-            <button class="gallery__item"><img src="images/deck-ba-framing.jpg" alt="Deck framing and joists in progress" loading="lazy"></button>
-            <figcaption><span class="tag">Framing</span></figcaption>
-          </figure>
-          <figure class="ba__item reveal">
-            <button class="gallery__item"><img src="images/deck-ba-after-2.jpg" alt="Deck stairs leading to upper level, in progress" loading="lazy"></button>
-            <figcaption><span class="tag">In progress</span></figcaption>
-          </figure>
-          <figure class="ba__item reveal">
-            <button class="gallery__item"><img src="images/deck-ba-after-3.jpg" alt="Finished deck with solar post cap lights" loading="lazy"></button>
-            <figcaption><span class="tag tag--done">Finished</span></figcaption>
-          </figure>
-        </div>
-      </div>
-      <div class="ba">
-        <h3 class="ba__title">Raised pool deck extension</h3>
-        <div class="ba__pair ba__pair--wide">
-          <figure class="ba__item reveal">
-            <button class="gallery__item"><img src="images/deck-pool-1.jpg" alt="Raised wood deck off the back of the house beside an above-ground pool" loading="lazy"></button>
-            <figcaption><span class="tag tag--done">Finished</span></figcaption>
-          </figure>
-          <figure class="ba__item reveal">
-            <button class="gallery__item"><img src="images/deck-pool-2.jpg" alt="Aerial view of the new deck joining the existing composite deck at the pool, crew member at work" loading="lazy"></button>
-            <figcaption><span class="tag">Aerial view</span></figcaption>
-          </figure>
-        </div>
-      </div>
-      <div class="bath__cta">
-        <a href="index.html?service=deck#contact" class="btn btn--primary">Get a Deck Estimate</a>
-      </div>
+      <nav class="mag-toc" aria-label="Projects on this page">
+        <p class="mag-toc__title">In this issue</p>
+        <a href="#story-outdoor"><span>01</span>Decks &amp; paver patios</a>
+        <a href="#story-multilevel"><span>02</span>Multi-level deck before &amp; after</a>
+        <a href="#story-pool"><span>03</span>Raised pool deck extension</a>
+        <a href="#story-framing"><span>04</span>New deck framing</a>
+      </nav>
     </div>
   </section>
+
+  <article class="mag-story" id="story-outdoor">
+    <div class="wrap">
+      <header class="mag-story__head"><span class="mag-num">No. 01</span><h2>Made for outdoor living</h2><p class="mag-dek">Decks &amp; paver patios</p></header>
+      <div class="mag-split">
+        <div class="mag-split__text">
+          <p class="mag-drop">A two-level deck steps down to a paver patio beside the pool, and a gazebo turns the patio into an outdoor living room. Pressure-treated and composite options, matched railings and wide stairs make each space easy to use and easy to love.</p>
+          <blockquote class="mag-quote">The best room in the house might be the one outside.</blockquote>
+        </div>
+        <div class="mag-grid mag-grid--pair">
+          <figure class="mag__fig"><button class="gallery__item"><img src="images/project-3.jpg" alt="Two-level deck with stairs beside a paver patio and pool" loading="lazy"></button><figcaption><b>Finished</b> Deck, stairs and paver patio.</figcaption></figure>
+          <figure class="mag__fig"><button class="gallery__item"><img src="images/service-deck.jpg" alt="Paver patio with gazebo and outdoor seating" loading="lazy"></button><figcaption><b>Finished</b> Paver patio and outdoor living area.</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="mag-story mag-story--tint" id="story-multilevel">
+    <div class="wrap">
+      <header class="mag-story__head"><span class="mag-num">No. 02</span><h2>From bare dirt to a multi-level deck</h2><p class="mag-dek">Before &amp; after</p></header>
+      <div class="mag__ba">
+        <figure class="mag__fig"><button class="gallery__item"><img src="images/deck-ba-before.jpg" alt="Before: bare dirt yard with a concrete block wall" loading="lazy"></button><figcaption><b>Before</b> Bare dirt and a block wall.</figcaption></figure>
+        <figure class="mag__fig"><button class="gallery__item"><img src="images/deck-ba-after.jpg" alt="After: finished multi-level wood deck with stairs and railings" loading="lazy"></button><figcaption><b>After</b> A finished multi-level deck.</figcaption></figure>
+      </div>
+      <div class="mag__ba mag__ba--three mag__ba--steps">
+        <figure class="mag__fig"><button class="gallery__item"><img src="images/deck-ba-framing.jpg" alt="Deck framing and joists in progress" loading="lazy"></button><figcaption><b>Framing</b> Framing and joists.</figcaption></figure>
+        <figure class="mag__fig"><button class="gallery__item"><img src="images/deck-ba-after-2.jpg" alt="Deck stairs leading to upper level, in progress" loading="lazy"></button><figcaption><b>In progress</b> Stairs to the upper level.</figcaption></figure>
+        <figure class="mag__fig"><button class="gallery__item"><img src="images/deck-ba-after-3.jpg" alt="Finished deck with solar post cap lights" loading="lazy"></button><figcaption><b>Finished</b> Solar post cap lights.</figcaption></figure>
+      </div>
+      <p class="mag-caption-lg">Solid framing, wide stairs and solar post cap lights turned an unused slope into the family's favorite spot.</p>
+    </div>
+  </article>
+
+  <article class="mag-story" id="story-pool">
+    <div class="wrap">
+      <header class="mag-story__head"><span class="mag-num">No. 03</span><h2>A raised deck by the pool</h2><p class="mag-dek">Raised pool deck extension</p></header>
+      <div class="mag__ba mag__ba--wide">
+        <figure class="mag__fig"><button class="gallery__item"><img src="images/deck-pool-1.jpg" alt="Raised wood deck off the back of the house beside an above-ground pool" loading="lazy"></button><figcaption><b>Finished</b> The new deck off the back of the house.</figcaption></figure>
+        <figure class="mag__fig"><button class="gallery__item"><img src="images/deck-pool-2.jpg" alt="Aerial view of the new deck joining the existing composite deck at the pool, crew member at work" loading="lazy"></button><figcaption><b>Aerial view</b> Joining the existing composite deck.</figcaption></figure>
+        <figure class="mag__fig"><button class="gallery__item"><img src="images/project-5-hero.jpg" alt="Wraparound deck around an above-ground pool, in progress" loading="lazy"></button><figcaption><b>In progress</b> Pool deck with railings.</figcaption></figure>
+      </div>
+      <p class="mag-caption-lg">A raised extension ties the house to the pool deck, so summer flows from the kitchen to the water.</p>
+    </div>
+  </article>
+
+  <article class="mag-story mag-story--tint" id="story-framing">
+    <div class="wrap">
+      <header class="mag-story__head"><span class="mag-num">No. 04</span><h2>Built right from the frame up</h2><p class="mag-dek">New deck framing</p></header>
+      <div class="mag-split">
+        <div class="mag-split__text">
+          <p class="mag-drop">Every deck we build starts with framing done right: proper footings, straight joists and solid hardware. It's the part you won't see once the boards go down, and the reason the deck stays safe and level for years.</p>
+          <blockquote class="mag-quote">A deck is only as good as what holds it up.</blockquote>
+        </div>
+        <div class="mag__fig--solo">
+          <figure class="mag__fig"><button class="gallery__item"><img src="images/service-repairs.jpg" alt="New deck framing behind a house" loading="lazy"></button><figcaption><b>In progress</b> New deck framing behind the house.</figcaption></figure>
+        </div>
+      </div>
+      <div class="bath__cta"><a href="index.html?service=deck#contact" class="btn btn--primary">Get a Deck Estimate</a></div>
+    </div>
+  </article>
 
   <!-- CTA -->
   <section class="cta">
@@ -190,7 +205,7 @@
   <button class="lightbox__nav lightbox__next" aria-label="Next photo">›</button>
 </div>
 
-<script src="js/main.js?v=20261128j"></script>
-<script src="js/intake.js?v=20261128j"></script>
+<script src="js/main.js?v=20261128k"></script>
+<script src="js/intake.js?v=20261128k"></script>
 </body>
 </html>

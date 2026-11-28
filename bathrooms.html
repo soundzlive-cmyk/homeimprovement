@@ -14,9 +14,12 @@
   <meta name="theme-color" content="#13233a">
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="apple-touch-icon" href="images/favicon.png">
-  <link rel="stylesheet" href="css/styles.css?v=20261128j">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap">
+  <link rel="stylesheet" href="css/styles.css?v=20261128k">
 </head>
-<body>
+<body class="page-mag">
 
 <a class="skip" href="#main">Skip to content</a>
 
@@ -63,65 +66,60 @@
 
 <main id="main">
 
-  <section class="page-head">
-    <div class="wrap">
-      <p class="kicker">Bathroom remodels</p>
-      <h1>Bathrooms built to last.</h1>
-      <p class="hero__lead">Waterproofing, large-format tile, showers, tubs, vanities and flooring, all done by our own crew.</p>
+  <!-- MAGAZINE COVER -->
+  <section class="mag-cover">
+    <img src="images/bath-shower-finished.jpg" alt="Finished walk-in shower with marble-look walls and black hex tile floor" class="mag-cover__img">
+    <div class="wrap mag-cover__text">
+      <p class="mag-kicker">Express Home Improvement &middot; The Bath Issue</p>
+      <h1>Bathrooms</h1>
+      <p class="mag-dek">Spa-worthy showers, tubs and vanities, built to last by our own crew.</p>
     </div>
   </section>
 
-  <!-- BATHROOMS -->
-  <section class="section" id="bathrooms">
-    <div class="wrap">
-      <div class="ba" style="margin-top:0">
-        <h3 class="ba__title">Walk-in shower and bathroom remodel</h3>
-        <p class="muted">Marble-look porcelain walls, a built-in niche, a black hex tile floor and a new vanity.</p>
-        <div class="ba__steps ba__steps--tall">
-          <figure class="ba__item reveal">
-            <button class="gallery__item"><img src="images/bath-shower-tiling.jpg" alt="Shower walls being tiled with large marble-look porcelain and leveling clips" loading="lazy"></button>
-            <figcaption><span class="tag">In progress</span></figcaption>
-          </figure>
-          <figure class="ba__item reveal">
-            <button class="gallery__item"><img src="images/bath-shower-finished.jpg" alt="Finished walk-in shower with marble-look walls, built-in niche and black hex tile floor" loading="lazy"></button>
-            <figcaption><span class="tag tag--done">Finished</span></figcaption>
-          </figure>
-          <figure class="ba__item reveal">
-            <button class="gallery__item"><img src="images/bath-vanity-finished.jpg" alt="Finished bathroom with new vanity, toilet, gray walls and wood-look tile floor" loading="lazy"></button>
-            <figcaption><span class="tag tag--done">Finished</span></figcaption>
-          </figure>
-        </div>
+  <!-- INTRO + CONTENTS -->
+  <section class="mag-intro">
+    <div class="wrap mag-intro__grid">
+      <div class="mag-intro__text">
+        <p class="mag-lede">A great bathroom starts behind the walls. We waterproof, level and prep every surface before the first tile goes up, so the beauty you see is built on work that lasts.</p>
+        <p>Here are a few recent bathrooms, from a full walk-in shower remodel to double vanities, glass enclosures and soaking tubs. Every one was handled start to finish by our own crew.</p>
       </div>
-      <div class="ba">
-        <h3 class="ba__title">More bathroom projects</h3>
-        <div class="bath-grid">
-          <figure class="ba__item reveal">
-            <button class="gallery__item"><img src="images/bath-double-vanity.jpg" alt="Bathroom with double vanity and lighted mirror" loading="lazy"></button>
-            <figcaption><span class="tag tag--done">Double vanity</span></figcaption>
-          </figure>
-          <figure class="ba__item reveal">
-            <button class="gallery__item"><img src="images/bath-glass-shower.jpg" alt="Bathroom with glass shower and white vanity" loading="lazy"></button>
-            <figcaption><span class="tag tag--done">Glass shower</span></figcaption>
-          </figure>
-          <figure class="ba__item reveal">
-            <button class="gallery__item"><img src="images/bath-shower-bench.jpg" alt="Tiled shower with niche and built-in bench" loading="lazy"></button>
-            <figcaption><span class="tag tag--done">Shower bench</span></figcaption>
-          </figure>
-          <figure class="ba__item reveal">
-            <button class="gallery__item"><img src="images/bath-jetted-tub.jpg" alt="Bathroom with freestanding jetted tub and marble-look walls" loading="lazy"></button>
-            <figcaption><span class="tag tag--done">Jetted tub</span></figcaption>
-          </figure>
-          <figure class="ba__item reveal">
-            <button class="gallery__item"><img src="images/bath-glass-door.jpg" alt="Glass sliding shower door installation" loading="lazy"></button>
-            <figcaption><span class="tag tag--done">Glass door</span></figcaption>
-          </figure>
-        </div>
-      </div>
-      <div class="bath__cta">
-        <a href="index.html?service=bathroom#contact" class="btn btn--primary">Get a Bathroom Estimate</a>
-      </div>
+      <nav class="mag-toc" aria-label="Projects on this page">
+        <p class="mag-toc__title">In this issue</p>
+        <a href="#story-shower"><span>01</span>Walk-in shower remodel</a>
+        <a href="#story-details"><span>02</span>More bathroom projects</a>
+      </nav>
     </div>
   </section>
+
+  <article class="mag-story" id="story-shower">
+    <div class="wrap">
+      <header class="mag-story__head"><span class="mag-num">No. 01</span><h2>The spa shower, start to finish</h2><p class="mag-dek">Walk-in shower and bathroom remodel</p></header>
+      <div class="mag__ba mag__ba--three">
+        <figure class="mag__fig"><button class="gallery__item"><img src="images/bath-shower-tiling.jpg" alt="Shower walls being tiled with large marble-look porcelain and leveling clips" loading="lazy"></button><figcaption><b>In progress</b> Large-format porcelain going up.</figcaption></figure>
+        <figure class="mag__fig"><button class="gallery__item"><img src="images/bath-shower-finished.jpg" alt="Finished walk-in shower with marble-look walls, built-in niche and black hex tile floor" loading="lazy"></button><figcaption><b>Finished</b> A built-in niche and black hex floor.</figcaption></figure>
+        <figure class="mag__fig"><button class="gallery__item"><img src="images/bath-vanity-finished.jpg" alt="Finished bathroom with new vanity, toilet, gray walls and wood-look tile floor" loading="lazy"></button><figcaption><b>Finished</b> New vanity and wood-look tile.</figcaption></figure>
+      </div>
+      <div class="mag-cols">
+        <p class="mag-drop">Marble-look porcelain walls, a built-in niche, a black hex tile floor and a new vanity turned a dated bath into a bright, easy-to-clean retreat. Leveling clips keep every large-format tile flat and every grout line true.</p>
+        <blockquote class="mag-quote">The details you see are only as good as the prep you don't.</blockquote>
+      </div>
+    </div>
+  </article>
+
+  <article class="mag-story mag-story--tint" id="story-details">
+    <div class="wrap">
+      <header class="mag-story__head"><span class="mag-num">No. 02</span><h2>Details that make the room</h2><p class="mag-dek">More bathroom projects</p></header>
+      <div class="mag-grid mag-grid--set">
+        <figure class="mag__fig"><button class="gallery__item"><img src="images/bath-double-vanity.jpg" alt="Bathroom with double vanity and lighted mirror" loading="lazy"></button><figcaption><b>Double vanity</b> Room for two, with a lighted mirror.</figcaption></figure>
+        <figure class="mag__fig"><button class="gallery__item"><img src="images/bath-glass-shower.jpg" alt="Bathroom with glass shower and white vanity" loading="lazy"></button><figcaption><b>Glass shower</b> Clear glass keeps the room open.</figcaption></figure>
+        <figure class="mag__fig"><button class="gallery__item"><img src="images/bath-shower-bench.jpg" alt="Tiled shower with niche and built-in bench" loading="lazy"></button><figcaption><b>Shower bench</b> A built-in bench and niche.</figcaption></figure>
+        <figure class="mag__fig"><button class="gallery__item"><img src="images/bath-jetted-tub.jpg" alt="Bathroom with freestanding jetted tub and marble-look walls" loading="lazy"></button><figcaption><b>Jetted tub</b> A jetted tub framed in marble-look tile.</figcaption></figure>
+        <figure class="mag__fig"><button class="gallery__item"><img src="images/bath-glass-door.jpg" alt="Glass sliding shower door installation" loading="lazy"></button><figcaption><b>Glass door</b> A sliding glass door, installed.</figcaption></figure>
+      </div>
+      <p class="mag-caption-lg">Double vanities, glass showers, built-in benches and soaking tubs: every bath is designed around how you use it.</p>
+      <div class="bath__cta"><a href="index.html?service=bathroom#contact" class="btn btn--primary">Get a Bathroom Estimate</a></div>
+    </div>
+  </article>
 
   <!-- CTA -->
   <section class="cta">
@@ -175,7 +173,7 @@
   <button class="lightbox__nav lightbox__next" aria-label="Next photo">›</button>
 </div>
 
-<script src="js/main.js?v=20261128j"></script>
-<script src="js/intake.js?v=20261128j"></script>
+<script src="js/main.js?v=20261128k"></script>
+<script src="js/intake.js?v=20261128k"></script>
 </body>
 </html>

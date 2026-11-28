@@ -567,3 +567,36 @@ p { margin: 0 0 1em; }
   .mag-grid--feature { grid-template-rows: 220px 150px; }
   .mag__ba .gallery__item { aspect-ratio: 3 / 4; }
 }
+
+/* ---- Home Improvements: polaroids on a plain grey backdrop, 30% smaller photos, tighter spacing ---- */
+.page-mag .mag-grid--feature, .page-mag .mag-grid--pair, .page-mag .mag__ba, .page-mag .mag-split__text .mag__fig {
+  background: #d6d7d9; padding: 1.4rem; border-radius: 4px;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.06), inset 0 0 30px rgba(0,0,0,.08);
+}
+.page-mag .gallery__item {
+  border: 9px solid #fff; border-bottom-width: 30px; border-radius: 2px; background: #fff;
+  box-shadow: 0 8px 18px rgba(0,0,0,.28), 0 1px 3px rgba(0,0,0,.18);
+}
+.page-mag .mag__fig { transition: transform .3s; }
+.page-mag .mag-grid--feature .mag__fig:nth-child(odd), .page-mag .mag-grid--pair .mag__fig:nth-child(odd), .page-mag .mag__ba .mag__fig:nth-child(odd) { transform: rotate(-1.2deg); }
+.page-mag .mag-grid--feature .mag__fig:nth-child(even), .page-mag .mag-grid--pair .mag__fig:nth-child(even), .page-mag .mag__ba .mag__fig:nth-child(even) { transform: rotate(1deg); }
+.page-mag .mag__fig:hover { transform: rotate(0) scale(1.02); z-index: 2; }
+.page-mag .mag__fig figcaption { color: #3c4450; }
+.mag-story { padding: clamp(2.25rem, 5vw, 3.75rem) 0; }
+.mag-story__head { margin-bottom: clamp(1.25rem, 3vw, 2rem); }
+.mag-intro { padding: clamp(2.25rem, 5vw, 3.5rem) 0; }
+.mag-cols { margin-top: clamp(1.5rem, 3vw, 2.25rem); }
+.mag-caption-lg { margin-top: 1.25rem; }
+.page-mag .bath__cta { margin-top: 2rem; }
+@media (min-width: 821px) {
+  .page-mag .mag-grid--feature { width: 70%; margin-inline: auto; grid-template-rows: 210px 210px; }
+  .page-mag .mag__ba { max-width: 686px; }
+  .page-mag .mag-split { width: 85%; margin-inline: auto; }
+  .page-mag .mag-grid--pair { width: 82%; justify-self: center; }
+  .page-mag .mag-split__text .mag__fig { width: 82%; }
+}
+@media (max-width: 560px) {
+  .page-mag .mag-grid--feature, .page-mag .mag-grid--pair, .page-mag .mag__ba, .page-mag .mag-split__text .mag__fig { padding: .8rem; }
+  .page-mag .gallery__item { border-width: 6px; border-bottom-width: 22px; }
+}
+@media (prefers-reduced-motion: reduce) { .page-mag .mag__fig { transition: none; } }

@@ -14,9 +14,11 @@
   onScroll();
 
   // Mobile menu
-  function closeMenu() { nav.classList.remove('is-open'); toggle.setAttribute('aria-expanded', 'false'); }
+  function closeMenu() { nav.classList.remove('is-open'); toggle.setAttribute('aria-expanded', 'false'); document.body.classList.remove('menu-open'); }
   toggle.addEventListener('click', function () {
-    toggle.setAttribute('aria-expanded', nav.classList.toggle('is-open'));
+    var open = nav.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', open);
+    document.body.classList.toggle('menu-open', open);
   });
   document.querySelectorAll('.nav__links a').forEach(function (a) { a.addEventListener('click', closeMenu); });
 

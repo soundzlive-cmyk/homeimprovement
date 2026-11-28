@@ -53,7 +53,7 @@ p { margin: 0 0 1em; }
 .topbar { background: var(--navy); color: rgba(255,255,255,.85); font-size: .85rem; }
 .topbar__inner { display: flex; justify-content: space-between; gap: 1rem; padding: .55rem 0; }
 .topbar a { color: var(--gold); font-weight: 700; text-decoration: none; }
-.nav { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.97); border-bottom: 1px solid var(--line); transition: box-shadow .2s; }
+.nav { position: sticky; top: 0; z-index: 50; background: #fff; border-bottom: 1px solid var(--line); transition: box-shadow .2s; }
 .nav.is-scrolled { box-shadow: 0 4px 18px rgba(19,35,58,.08); }
 .nav__inner { display: flex; align-items: center; justify-content: space-between; padding: .6rem 0; }
 .brand img { height: 64px; width: auto; }
@@ -641,3 +641,12 @@ p { margin: 0 0 1em; }
 .mag-note { max-width: 760px; margin: 1.5rem auto 0; text-align: center; font-size: .78rem; color: var(--muted); }
 .mag-cols:has(.mag-list) { align-items: start; }
 @media (max-width: 820px) { .mag-brands { grid-template-columns: 1fr; } }
+
+/* ---- Mobile polish: keep floating buttons off the open menu, bigger tap targets ---- */
+body.menu-open .intake-launch, body.menu-open .callbar { visibility: hidden !important; opacity: 0 !important; }
+.footer__credit a { display: inline-block; padding: .6rem 0; }
+@media (max-width: 820px) {
+  .mag-toc a { padding: .85rem 0; }
+  .footer__copy { gap: .25rem; }
+}
+@media (max-width: 820px) { .footer { padding-bottom: 9rem; } }

@@ -7,7 +7,7 @@
 
   var steps = [
     { key: 'service', ask: "Hi! I'm the Express Home Improvement assistant. What kind of project can we help with?",
-      chips: ['Interior painting', 'Bathroom remodel', 'Kitchen', 'Roofing', 'Deck or patio', 'Plumbing / electrical', 'Repairs', 'Something else'] },
+      chips: ['Additions', 'Basement remodel', 'Bathroom remodel', 'Deck or patio', 'Interior painting', 'Kitchen renovation', 'Plumbing / electrical', 'Repairs', 'Roofing', 'Windows', 'Something else'] },
     { key: 'details', ask: 'Great choice. Tell me a little about the job: rooms, size, what needs doing.',
       input: 'text', placeholder: 'e.g. Repaint 2 bedrooms and a hallway', optional: true },
     { key: 'timeline', ask: 'When would you like to get started?',

@@ -431,12 +431,8 @@ p { margin: 0 0 1em; }
   .vid video { position: static; height: auto; max-height: 75vh; object-fit: contain; }
 }
 
-/* ---- Polaroid photos on a newsprint backdrop (all project photos) ---- */
-.decks, .ba__pair, .ba__steps, .bath-grid, .gallery, .bath-feature__img {
-  background: #e8e6e0 url("../images/newsprint.jpg") center / 420px repeat;
-  padding: 1.4rem; border-radius: 4px;
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,.08), inset 0 0 40px rgba(0,0,0,.12);
-}
+/* ---- Polaroid frames on all project photos ---- */
+.decks, .ba__pair, .ba__steps, .bath-grid, .gallery { padding: .6rem; }
 .gallery__item {
   border: 9px solid #fff; border-bottom-width: 30px; border-radius: 2px; background: #fff;
   box-shadow: 0 8px 18px rgba(0,0,0,.32), 0 1px 3px rgba(0,0,0,.2);
@@ -461,7 +457,7 @@ p { margin: 0 0 1em; }
   .gallery.gallery--two { grid-auto-rows: 255px; }
 }
 @media (max-width: 560px) {
-  .decks, .ba__pair, .ba__steps, .bath-grid, .gallery, .bath-feature__img { padding: .8rem; }
+  .decks, .ba__pair, .ba__steps, .bath-grid, .gallery { padding: .4rem; }
   .gallery__item { border-width: 6px; border-bottom-width: 22px; }
   .deck__item .gallery__item { border-bottom-width: 34px; }
   .deck__item figcaption { left: 6px; right: 6px; height: 34px; font-size: .72rem; }
